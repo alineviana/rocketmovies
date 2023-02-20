@@ -57,6 +57,7 @@ export const Content = styled.div`
         }
 
         p {
+            height: 50px;
             margin-left: 32px;
             padding-top: 15px;
         }

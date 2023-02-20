@@ -5,7 +5,7 @@ export function Note({ data, ...rest}) {
     return(
         <Container {...rest}>
             <h1>{data.title}</h1>
-            <p>{data.rest}</p>
+            <p>{data.text}</p>
 
             {
                 data.tags && 

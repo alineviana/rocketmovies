@@ -23,7 +23,7 @@ export function Home() {
             
                     <Note data={{ 
                         title: 'Interestellar',
-                        rest: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida.',
+                        text: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família.',
                         tags: [
                             {id: '1', name: 'Ficção Científica'},
                             {id: '2', name: 'Drama'},
@@ -34,7 +34,7 @@ export function Home() {
             
                     <Note data={{ 
                         title: 'Interestellar',
-                        rest: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida.',
+                        text: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família.',
                         tags: [
                             {id: '1', name: 'Ficção Científica'},
                             {id: '2', name: 'Drama'},
@@ -45,7 +45,7 @@ export function Home() {
 
                     <Note data={{ 
                         title: 'Interestellar',
-                        rest: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida.',
+                        text: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família.',
                         tags: [
                             {id: '1', name: 'Ficção Científica'},
                             {id: '2', name: 'Drama'},
@@ -53,7 +53,7 @@ export function Home() {
                         ]
                     }}
                     />
-                    
+
             </Content>
 
         </Container>
