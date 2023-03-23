@@ -24,6 +24,15 @@ export function Preview() {
         navigate(-1);
     }
 
+    async function handleRemove() {
+        const confirm = window.confirm("Deseja realmente remover a nota sobre o filme?");
+    
+        if(confirm) {
+            await api.delete(`/notes/${params.id}`);
+            handleBack();
+        }
+    }
+
     useEffect(() => {
         async function fetchNote() {
             const response = await api.get(`/notes/${params.id}`);
@@ -45,6 +54,11 @@ export function Preview() {
                     onClick={handleBack} 
                 />
             </Link>
+
+            <ButtonText 
+                title="Excluir Nota"
+                onClick={handleRemove}  
+            />
             
             {
                 data && 

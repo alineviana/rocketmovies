@@ -23,6 +23,19 @@ export const Container = styled.div`
             margin-left: 8px;
         }
     }
+
+    > button {
+        width: 150px;
+        height: 35px;
+
+        border-radius: 8px;
+
+        background-color: ${({ theme }) => theme.COLORS.PINK_500};
+        color: ${({ theme }) => theme.COLORS.GRAY_300};
+
+        margin: 0 0 20px 1090px;
+        font-size: 16px;
+    }
 `;
 
 export const Content = styled.div`
