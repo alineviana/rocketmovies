@@ -56,7 +56,7 @@ export function Preview() {
             </Link>
 
             <ButtonText 
-                title="Excluir Nota"
+                title="Excluir"
                 onClick={handleRemove}  
             />
             

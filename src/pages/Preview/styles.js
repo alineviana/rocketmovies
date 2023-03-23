@@ -25,15 +25,17 @@ export const Container = styled.div`
     }
 
     > button {
-        width: 150px;
-        height: 35px;
+        width: 96px;
+        height: 30px;
 
         border-radius: 8px;
 
-        background-color: ${({ theme }) => theme.COLORS.PINK_500};
-        color: ${({ theme }) => theme.COLORS.GRAY_300};
+        /* background-color: ${({ theme }) => theme.COLORS.PINK_500}; */
+        color: ${({ theme }) => theme.COLORS.PINK_500};
 
-        margin: 0 0 20px 1090px;
+        margin-top: 152px;
+        position: absolute;
+        right: 114px;
         font-size: 16px;
     }
 `;
