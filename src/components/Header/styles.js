@@ -56,5 +56,7 @@ export const Logout = styled.button`
     color: ${({ theme }) => theme.COLORS.GRAY_100};
     font-weight: 400;
 
-    text-align: right;
+    margin-top: 70px;
+    position: absolute;
+    margin-left: 1060px;
 `;

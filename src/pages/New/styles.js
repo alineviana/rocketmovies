@@ -5,7 +5,7 @@ export const Container = styled.div`
     height: 100vh;
 
     display: grid;
-    grid-template-rows: 105px auto;
+    grid-template-rows: 115px auto;
     grid-template-areas: 
     "header"
     "content";
@@ -14,11 +14,25 @@ export const Container = styled.div`
         grid-area: content;
         overflow-y: scroll;
 
-        
+        ::-webkit-scrollbar {
+            width: 0.45rem;               
+        }
+  
+        ::-webkit-scrollbar-track {
+            background: transparent;        
+        }
+        ::-webkit-scrollbar-thumb {  
+            border-radius: 2rem;
+            border: 0.3px solid ${({ theme }) => theme.COLORS.PINK_500};    
+        }
 
         svg {
             color: ${({ theme }) => theme.COLORS.PINK_500};        
             margin-right: 8px;
+        }
+
+        h2 {
+            margin-bottom: 24px;
         }
     }
 
@@ -29,8 +43,8 @@ export const Container = styled.div`
         grid-template-columns: 550px 550px;
         grid-template-areas: "input input";
 
-        margin-top: 40px;
-        margin-bottom: 30px;
+        margin-top: 30px;
+        margin-bottom: 20px;
     }
 
     .tags {

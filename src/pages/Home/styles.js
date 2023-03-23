@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     width: 100%;
-    height: 100vh;
 `;
 
 export const Menu = styled.div`
@@ -41,7 +40,22 @@ export const Content = styled.div`
     margin: 0 106px 0 123px;
     display: flex;
     flex-direction: column;
+
+    height: 386px;
+
     overflow-y: auto;
+    
+    ::-webkit-scrollbar {
+        width: 0.45rem;               
+    }
+  
+    ::-webkit-scrollbar-track {
+        background: transparent;        
+    }
+    ::-webkit-scrollbar-thumb {  
+        border-radius: 2rem;
+        border: 0.3px solid ${({ theme }) => theme.COLORS.PINK_500};    
+    }
 
     div {
         height: 223px;
@@ -52,14 +66,17 @@ export const Content = styled.div`
         margin-bottom: 24px;
 
         h1 {
+            font-size: 24px;
+            
             margin-left: 32px;
             padding-top: 32px;
         }
 
         p {
-            height: 50px;
             margin-left: 32px;
             padding-top: 15px;
+
+            color: ${({ theme }) => theme.COLORS.WHITE};
         }
     }
 `;

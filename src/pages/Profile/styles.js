@@ -23,8 +23,7 @@ export const Container = styled.div`
             align-self: center;
         }
 
-        p {
-            color: ${({ theme }) => theme.COLORS.PINK_500};
+        button {
             margin-left: 8px;
         }
     }

@@ -1,15 +1,44 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { api } from '../../services/api';
 import { Container, Menu, NewFilm, Content } from './styles';
 import { Header } from '../../components/Header';
+import { Input } from '../../components/Input';
+import { FiPlus, FiSearch } from 'react-icons/fi';
 import { Note } from '../../components/Note';
-import { FiPlus } from 'react-icons/fi';
 
 export function Home() {
+    const [search, setSearch] = useState("");
+    const [notes, setNotes] = useState([]);
+    
+    const navigate = useNavigate();
+
+    function handlePreview(id) {
+        navigate(`/preview/${id}`);
+    }
+
+    useEffect(() => {
+        async function fetchNotes() {
+            const response = await api.get(`/notes?title=${search}`);
+            setNotes(response.data);
+        }
+
+        fetchNotes();
+        
+    }, [search]);
+
     return(
         <Container>
-            <Header/>
+            
+            <Header>
+                <Input 
+                    placeholder="Pesquisar pelo título" 
+                    icon={FiSearch}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+            </Header>                 
 
             <Menu>
-
                 <h1>Meus filmes</h1>
 
                 <NewFilm to="/new">
@@ -17,43 +46,18 @@ export function Home() {
                     Adicionar filme
                 </NewFilm>
 
-            </Menu>
+            </Menu>          
 
             <Content>
-            
-                    <Note data={{ 
-                        title: 'Interestellar',
-                        text: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família.',
-                        tags: [
-                            {id: '1', name: 'Ficção Científica'},
-                            {id: '2', name: 'Drama'},
-                            {id: '3', name: 'Família'}
-                        ]
-                    }}
-                    />
-            
-                    <Note data={{ 
-                        title: 'Interestellar',
-                        text: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família.',
-                        tags: [
-                            {id: '1', name: 'Ficção Científica'},
-                            {id: '2', name: 'Drama'},
-                            {id: '3', name: 'Família'}
-                        ]
-                    }}
-                    />
-
-                    <Note data={{ 
-                        title: 'Interestellar',
-                        text: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família.',
-                        tags: [
-                            {id: '1', name: 'Ficção Científica'},
-                            {id: '2', name: 'Drama'},
-                            {id: '3', name: 'Família'}
-                        ]
-                    }}
-                    />
-
+                    {
+                        notes.map(note => (
+                            <Note
+                                key={String(note.id)} 
+                                data={note}
+                                onClick={() => handlePreview(note.id)}
+                            />    
+                        ))
+                    }
             </Content>
 
         </Container>
