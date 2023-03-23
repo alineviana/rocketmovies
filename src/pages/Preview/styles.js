@@ -29,6 +29,7 @@ export const Content = styled.div`
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
     height: 450px;
+    margin-right: 106px;
     
     overflow-y: auto;
 
@@ -72,7 +73,7 @@ export const Content = styled.div`
     p {
         text-align: justify;
 
-        margin: 40px 130px 0 123px;
+        margin: 40px 24px 0 123px;
     }
   
     span:first-of-type {
