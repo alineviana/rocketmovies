@@ -30,7 +30,6 @@ export const Container = styled.div`
 
         border-radius: 8px;
 
-        /* background-color: ${({ theme }) => theme.COLORS.PINK_500}; */
         color: ${({ theme }) => theme.COLORS.PINK_500};
 
         margin-top: 152px;
@@ -97,7 +96,6 @@ export const Content = styled.div`
 `;
 
 export const Profile = styled(Link)`
-    
     img {
         width: 16px;
         height: 16px;
@@ -116,6 +114,7 @@ export const Profile = styled(Link)`
         color: ${({ theme }) => theme.COLORS.WHITE};
 
         svg {
+            font-size: 15px;
             margin-right: 8px;
             color: ${({ theme }) => theme.COLORS.PINK_500};
         }

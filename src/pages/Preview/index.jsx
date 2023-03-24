@@ -13,12 +13,15 @@ import { Section } from '../../components/Section';
 import { Tag } from '../../components/Tag';
 
 export function Preview() {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState("");
     const params = useParams();
     const navigate = useNavigate();
     const { user } = useAuth();
 
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+
+    const registerDate = `${new Date(data.created_at).toLocaleDateString('pt-BR')} 
+                          às ${new Date(data.created_at).getHours()}:${new Date(data.created_at).getMinutes()}`;
 
     function handleBack(){
         navigate(-1);
@@ -42,7 +45,7 @@ export function Preview() {
         fetchNote();
         
     }, []);
-    
+
     return(
         <Container>
             <Header />
@@ -76,7 +79,7 @@ export function Preview() {
                         <strong> 
                             Por {user.name}
                             <BsStopwatch /> 
-                            {data.created_at}
+                            {registerDate}
                         </strong>
          
                     </Profile>
